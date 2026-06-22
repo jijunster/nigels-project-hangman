@@ -1,5 +1,6 @@
 @charset "utf-8";
-@import url("normalize.css");
+
+@use "normalize";
 
 *, *:before, *:after {
     box-sizing: border-box;
