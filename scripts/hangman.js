@@ -106,7 +106,7 @@ function processGuess(letter) {
 
         disableLetterButtons();
 
-        restartButton.style.display = "block";       
+        restartButton.style.display = "inline-block";       
 
     }
 
@@ -117,7 +117,7 @@ function processGuess(letter) {
 
         disableLetterButtons();
 
-        restartButton.style.display = "block";
+        restartButton.style.display = "inline-block";
 
     }
 }
