@@ -19,7 +19,7 @@ fetch("json/words.json")
             Math.floor(Math.random() * data.length);
 
         selectedWord = data[randomIndex].word;
-        
+
         hintDisplay.textContent = "Hint: " + data[randomIndex].hint;        
 
         wordDisplay.textContent = displayWord();
@@ -112,7 +112,7 @@ function processGuess(letter) {
 
     if (wrongGuesses >= maxWrongGuesses) {
 
-        showGameMessage("You suck! The word was " + selectedWord + ".");
+        showGameMessage("Game over! The word was " + selectedWord + ".");
         isGameOver = true;
 
         disableLetterButtons();

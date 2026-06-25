@@ -13,6 +13,22 @@
 	--border: #d9d9d9;
 }
 
+header {
+	text-align: center;
+}
+
+body {
+	margin: 0;
+	font-family: "Roboto", sans-serif;
+	background-color: var(--bg);
+	color: var(--text);
+}
+
+main {
+    text-align: center;
+}
+
+
 img {
 	max-width: 100%;
 	height: auto;
@@ -22,10 +38,6 @@ img {
 
     animation: shake 0.5s;
 
-}
-
-#play-again {
-    display: none;
 }
 
 @keyframes shake {
@@ -42,27 +54,117 @@ img {
 
 }
 
+@mixin button-style($radius, $borderColor, $padding) {
+
+    border-radius: $radius;
+    border: 1px solid $borderColor;
+    padding: $padding;
+    cursor: pointer;
+
+}
+
+.card {
+	background-color: var(--white);
+	border: 1px solid var(--border);
+	border-radius: 10px;
+	padding: 1rem;
+	margin-bottom: 1rem;
+    flex:1;
+}
+
+#wrapper {
+
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+
+}
+
+#play-again {
+
+    display: none;
+    margin-top: 1rem;
+
+    @include button-style(6px, var(--border), .75rem 1.5rem);
+
+}
+
+#word-display {
+
+    font-size: 2.5rem;
+    letter-spacing: .5rem;
+    margin: 1.5rem 0;
+
+}
+
+#hint {
+
+    font-style: italic;
+    color: gray;
+    margin-bottom: 1rem;
+
+}
+
+#game-message {
+
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 1rem 0;
+
+}
+
+#letter-buttons {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: .5rem;
+    margin: 1rem 0;
+
+}
+
+#letter-buttons button {
+
+    width: 40px;
+    height: 40px;
+
+    @include button-style(5px, #ccc, 0);
+
+}
+
+#letter-buttons button:disabled {
+
+    opacity: .4;
+    cursor: default;
+
+}
 
 @media (max-width: 599px) {
-    label {
-        display: block;
-        width: auto;
+
+    h1 {
+        font-size: 1.75rem;
     }
 
-    .input-wrapper {
-        width: 100%;
-        max-width: 250px;
+    #word-display {
+        font-size: 1.5rem;
+        letter-spacing: 0.25rem;
     }
 
-    .input-wrapper input {
-        width: 100%;
+    #hint,
+    #game-message {
+        font-size: 0.9rem;
     }
 
-    .tooltiptext {
-        left: auto;
-        right: 25px;
+    #hangman-image {
+        width: 180px;
     }
-	
+
+    #letter-buttons button {
+        width: 32px;
+        height: 32px;
+        font-size: 0.9rem;
+    }
+
 }
 
 @media (min-width: 600px) {
